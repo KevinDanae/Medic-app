@@ -1,8 +1,9 @@
 import { Route } from "react-router-dom";
-
+import Navbar from "./components/Navbar";
 function App() {
   return (
     <>
+      <Navbar />
       {/* Aqui va el navbar global para que se vea en todas las rutas */}
       <Route exact path="/">
         {/* Aqui va la pagina princpipal de landing page */}
