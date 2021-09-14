@@ -1,4 +1,5 @@
 import { Route } from "react-router-dom";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route exact path="/login">
         {/* Aqui va la pantalla de login */}
       </Route>
+      <Footer />
     </>
   );
 }
