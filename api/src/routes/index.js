@@ -9,4 +9,5 @@ router.get("/", (req, res) =>{
   res.json("soy la ruta get")
 })
 
+
 module.exports = router;
