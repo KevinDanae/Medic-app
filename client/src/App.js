@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* Aqui va el navbar global para que se vea en todas las rutas */}
+      <Route exact path="/">
+        {/* Aqui va la pagina princpipal de landing page */}
+      </Route>
+      <Route exact path="/home">
+        {/*  Aqui va el home dependiendo del tipo de usario */}
+      </Route>
+      <Route exact path="/login">
+        {/* Aqui va la pantalla de login */}
+      </Route>
+    </>
   );
 }
-
 export default App;
