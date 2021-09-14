@@ -1,5 +1,5 @@
 # Medic-app
-La aplicacion opera con una sola clinica que dispone de varios consultorios donde se atienden diverssas especialidades.
+La aplicacion opera con una sola clinica que dispone de varios consultorios donde se atienden diversas especialidades.
 
 Módulo Socios
 Resgistro de sus datos y van a tener una credencial(card) para acceder al centro medico.
