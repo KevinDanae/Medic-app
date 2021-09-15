@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { Patient } = require('../db');
+//const doctorRouter = require('../routes/doctors')
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 const router = Router();
@@ -10,4 +10,7 @@ const router = Router();
 //router.use('/blood', bloodRouter)
 //router.use('/doctor',doctorRouter);
 
+//router.use('/doctor',doctorRouter);
+
 module.exports = router;
+
