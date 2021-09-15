@@ -11,13 +11,15 @@ router.get("/", (req, res) =>{
 })
 
 router.post("/patient", async(req, res) => {
-  const {identification, name, lastname, age, plan, status} = req.body 
+  const {identification, name, lastname, age, plan, status, email, mobil} = req.body 
   try {
-    if( identification && name && lastname && age && plan && status){
+    if( identification && name && lastname && email &&age && plan && status){
       const newPatient = await Patient.create({
         identification,
         name,
         lastname,
+        email,
+        mobil,
         age,
         plan,
         status
