@@ -5,7 +5,6 @@ module.exports = (sequelize) => {
     name:{
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
     },
     Rh:{
       type: DataTypes.ENUM("positive", "negative"),
