@@ -53,6 +53,33 @@ module.exports = (sequelize) =>{
         return `${this.name} ${this.lastname}`
       }
     },
+    email:{
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate:{
+        notNull: {
+          msg: "El email no debe estar vacío"
+        },
+        isEmail:{
+          msg: "El email debe ser tener el formato: (foo@bar.com)"
+        }
+      }
+    },
+    mobil:{
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate:{
+        notNull: {
+          msg: "El celular no debe estar vacío"
+        },
+        isNumber(value){
+          const Regex = /[A-Z-a-z]/;
+          if(Regex.test(value)){
+            throw new Error ("El celular debería ser solo números")
+          }
+        }
+      }
+    },
     age:{
       type: DataTypes.INTEGER,
       allowNull: false,
