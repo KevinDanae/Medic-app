@@ -3,34 +3,62 @@ const { DataTypes } = require('sequelize');
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define('videogame', {
+  sequelize.define('doctor', {
     id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       allownull: false,
       primaryKey: true
     },
-    nombre: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Debe completar el nombre'
+        },
+        isAlpha: {
+          msg: 'El nombre solo debe contener caracteres alfabéticos',
+        }
+      }
     },
-    apellido: {
+    lastname: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Debe completar el apellido'
+        },
+        isAlpha: {
+          msg: 'El apellido solo debe contener caracteres alfabéticos',
+        }
+      }
     },
+    fullname:{
+        type: DataTypes.VIRTUAL,
+        get: function(){
+          return `${this.name} ${this.lastname}`
+        }
+      },
     email: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     mobil: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
-    nro_matricula: {
-      type: DataTypes.STRING,
-      allowNull:false
-    },
-    especialidades: {
-        type: DataTypes.STRING,
-        allowNull:false
+    medical_reg: {
+      type: DataTypes.INTEGER,
+      allowNull:false,
+      validate:{
+        isNum:{
+          msg: 'Matricula medica debe ser un número'
+        }
       }
-  });
+    },
+   });
 };
+
+
+ 
