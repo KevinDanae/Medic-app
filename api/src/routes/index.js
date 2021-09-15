@@ -1,5 +1,5 @@
 const { Router } = require('express');
-//const doctorRouter = require('../routes/doctors')
+const doctorRouter = require('../routes/doctor')
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
@@ -11,7 +11,7 @@ router.get("/", (req, res) =>{
   res.json("soy la ruta get")
 })
 
-//router.use('/doctor',doctorRouter);
+router.use('/doctor',doctorRouter);
 
 module.exports = router;
 
