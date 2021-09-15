@@ -11,14 +11,15 @@ module.exports = (sequelize) =>{
       primaryKey: true,
     },
     identification:{
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
       validate:{
-        isNum:{
-          msg: "la identificación debe ser un número"
-        },
-        isInt: {
-          msg: "Debería ser un entero"
+        isNumber(value){
+          const Regex = /[A-Z-a-z]/;
+          if(Regex.test(value)){
+            throw new Error ("El identificador debería ser solo números")
+          }
         }
       }
     },
